@@ -184,25 +184,19 @@ rollTheDices(4);
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
-// let now = new Date();
-// console.log(now.getTime());
-// now = now.getTime();
+function howManyDays(time) {
+  let now = new Date().getTime() / 1000;
 
-// let ieri = new Date("20/08/2024");
-// console.log(ieri.getTime());
+  let ieri = Date.parse(time) / 1000;
 
-// // let Difference_In_Time = now.getTime() - ieri.getTime();
+  let giorni = now - ieri;
 
-// // // Calculating the no. of days between
-// // // two dates
-// // let Difference_In_Days = Math.round(Difference_In_Time / (1000 * 3600 * 24));
+  giorni = giorni / (1000 * 3600 * 24);
+  let quanti = Math.floor(giorni * 1000);
+  console.log(`Sono passati ${quanti} giorni circa`);
+}
 
-// // // To display the final no. of days (result)
-// // console.log("Total number of days between dates:\n" + ieri.toDateString() + " and " + now.toDateString() + " is: " + Difference_In_Days + " days");
-
-// function howManyDays(date) {}
-
-// console.log(howManyDays("20-08-2024"));
+howManyDays("2024-08-10");
 
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
@@ -210,7 +204,6 @@ rollTheDices(4);
 
 function isTodayMyBirthday(date) {
   let now = new Date().toLocaleDateString();
-  console.log(now);
   if (date == now) {
     return true;
   } else {
