@@ -547,10 +547,14 @@ tr.forEach((element) => (element.classList = "test"));
 let x = "";
 let y = "*";
 
-for (let i = 0; i < 4; i++) {
-  console.log(x);
-  x += y;
+function halfTree(n) {
+  for (let i = 0; i < n + 1; i++) {
+    console.log(x);
+    x += y;
+  }
 }
+
+halfTree(5);
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -563,9 +567,9 @@ for (let i = 0; i < 4; i++) {
   *****
 
 */
-function tree() {
-  for (let i = 1; i <= 3; i++) {
-    let spaces = " ".repeat(3 - i);
+function tree(n) {
+  for (let i = 1; i <= n; i++) {
+    let spaces = " ".repeat(n - i);
 
     let stars = "*".repeat(2 * i - 1);
 
@@ -574,7 +578,7 @@ function tree() {
 }
 
 // Esempio d'uso: 3 righe
-tree();
+tree(4);
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
